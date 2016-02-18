@@ -42,7 +42,7 @@
 		43DA39211C7632C200613F8E = {
 			isa = PBXGroup;
 			children = (
-				43DA39471C76331B00613F8E /* CCZCache */,
+				43DA39481C7633D500613F8E /* CCZCache */,
 				43DA392C1C7632C200613F8E /* CCZCacheDemo */,
 				43DA392B1C7632C200613F8E /* Products */,
 			);
@@ -80,11 +80,11 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		43DA39471C76331B00613F8E /* CCZCache */ = {
+		43DA39481C7633D500613F8E /* CCZCache */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = CCZCache;
+			path = CCZCache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
