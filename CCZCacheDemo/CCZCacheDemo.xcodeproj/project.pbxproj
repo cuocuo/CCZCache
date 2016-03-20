@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4335879C1C9864F200D84716 /* CCZDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4335879B1C9864F200D84716 /* CCZDiskCache.m */; };
+		435539AF1C83371900D2572F /* CCZMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 435539AE1C83371900D2572F /* CCZMemoryCache.m */; };
+		43D796FD1C8DD0AC0031E2E8 /* CCZLinedHashMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D796FC1C8DD0AC0031E2E8 /* CCZLinedHashMap.m */; };
 		43DA392F1C7632C200613F8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DA392E1C7632C200613F8E /* main.m */; };
 		43DA39321C7632C200613F8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DA39311C7632C200613F8E /* AppDelegate.m */; };
 		43DA39351C7632C200613F8E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DA39341C7632C200613F8E /* ViewController.m */; };
@@ -16,6 +19,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4335879A1C9864F200D84716 /* CCZDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCZDiskCache.h; sourceTree = "<group>"; };
+		4335879B1C9864F200D84716 /* CCZDiskCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCZDiskCache.m; sourceTree = "<group>"; };
+		435539AC1C83338100D2572F /* CCZCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCZCache.h; sourceTree = "<group>"; };
+		435539AD1C83371900D2572F /* CCZMemoryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCZMemoryCache.h; sourceTree = "<group>"; };
+		435539AE1C83371900D2572F /* CCZMemoryCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCZMemoryCache.m; sourceTree = "<group>"; };
+		43D796FB1C8DD0AC0031E2E8 /* CCZLinedHashMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCZLinedHashMap.h; sourceTree = "<group>"; };
+		43D796FC1C8DD0AC0031E2E8 /* CCZLinedHashMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCZLinedHashMap.m; sourceTree = "<group>"; };
 		43DA392A1C7632C200613F8E /* CCZCacheDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CCZCacheDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43DA392E1C7632C200613F8E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		43DA39301C7632C200613F8E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -83,6 +93,13 @@
 		43DA39481C7633D500613F8E /* CCZCache */ = {
 			isa = PBXGroup;
 			children = (
+				435539AC1C83338100D2572F /* CCZCache.h */,
+				43D796FB1C8DD0AC0031E2E8 /* CCZLinedHashMap.h */,
+				43D796FC1C8DD0AC0031E2E8 /* CCZLinedHashMap.m */,
+				435539AD1C83371900D2572F /* CCZMemoryCache.h */,
+				435539AE1C83371900D2572F /* CCZMemoryCache.m */,
+				4335879A1C9864F200D84716 /* CCZDiskCache.h */,
+				4335879B1C9864F200D84716 /* CCZDiskCache.m */,
 			);
 			path = CCZCache;
 			sourceTree = "<group>";
@@ -157,9 +174,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4335879C1C9864F200D84716 /* CCZDiskCache.m in Sources */,
+				43D796FD1C8DD0AC0031E2E8 /* CCZLinedHashMap.m in Sources */,
 				43DA39351C7632C200613F8E /* ViewController.m in Sources */,
 				43DA39321C7632C200613F8E /* AppDelegate.m in Sources */,
 				43DA392F1C7632C200613F8E /* main.m in Sources */,
+				435539AF1C83371900D2572F /* CCZMemoryCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +241,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -259,7 +279,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -271,10 +291,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CCZCacheDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cuocuo..CCZCacheDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -282,10 +309,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CCZCacheDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cuocuo..CCZCacheDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -308,6 +342,7 @@
 				43DA39431C7632C200613F8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

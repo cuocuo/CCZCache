@@ -7,16 +7,30 @@
 //
 
 #import "ViewController.h"
+#import <pthread.h>
+#import <QuartzCore/QuartzCore.h>
+#import "CCZCache.h"
 
-@interface ViewController ()
-
+@interface ViewController ()<UIGestureRecognizerDelegate>
+{
+    NSLock *_testLock;
+    pthread_mutex_t _lock;
+    dispatch_semaphore_t _semaphoreLock;
+}
 @end
 
 @implementation ViewController
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    CCZMemoryCache *cache = [CCZMemoryCache memoryCacheWithType:CCZMemoryCacheTypeLRU2];
+    [cache setObject:nil forKey:@""];
+//    NSNumber
+//    NSDictionary
 }
 
 - (void)didReceiveMemoryWarning {
