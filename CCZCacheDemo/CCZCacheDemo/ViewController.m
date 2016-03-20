@@ -27,10 +27,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    CCZMemoryCache *cache = [CCZMemoryCache memoryCacheWithType:CCZMemoryCacheTypeLRU2];
-    [cache setObject:nil forKey:@""];
-//    NSNumber
-//    NSDictionary
 }
 
 - (void)didReceiveMemoryWarning {
