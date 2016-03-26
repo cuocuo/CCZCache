@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4335879C1C9864F200D84716 /* CCZDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4335879B1C9864F200D84716 /* CCZDiskCache.m */; };
+		433B6D851CA03EC300A8400E /* CCZCacheDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 433B6D841CA03EC300A8400E /* CCZCacheDemoTests.m */; };
 		435539AF1C83371900D2572F /* CCZMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 435539AE1C83371900D2572F /* CCZMemoryCache.m */; };
 		43D796FD1C8DD0AC0031E2E8 /* CCZLinedHashMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D796FC1C8DD0AC0031E2E8 /* CCZLinedHashMap.m */; };
 		43DA392F1C7632C200613F8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DA392E1C7632C200613F8E /* main.m */; };
@@ -18,9 +19,22 @@
 		43DA393D1C7632C200613F8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43DA393B1C7632C200613F8E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		433B6D871CA03EC300A8400E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43DA39221C7632C200613F8E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43DA39291C7632C200613F8E;
+			remoteInfo = CCZCacheDemo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		4335879A1C9864F200D84716 /* CCZDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCZDiskCache.h; sourceTree = "<group>"; };
 		4335879B1C9864F200D84716 /* CCZDiskCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCZDiskCache.m; sourceTree = "<group>"; };
+		433B6D821CA03EC300A8400E /* CCZCacheDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCZCacheDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		433B6D841CA03EC300A8400E /* CCZCacheDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCZCacheDemoTests.m; sourceTree = "<group>"; };
+		433B6D861CA03EC300A8400E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		435539AC1C83338100D2572F /* CCZCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCZCache.h; sourceTree = "<group>"; };
 		435539AD1C83371900D2572F /* CCZMemoryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCZMemoryCache.h; sourceTree = "<group>"; };
 		435539AE1C83371900D2572F /* CCZMemoryCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCZMemoryCache.m; sourceTree = "<group>"; };
@@ -39,6 +53,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		433B6D7F1CA03EC300A8400E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		43DA39271C7632C200613F8E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -49,11 +70,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		433B6D831CA03EC300A8400E /* CCZCacheDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				433B6D841CA03EC300A8400E /* CCZCacheDemoTests.m */,
+				433B6D861CA03EC300A8400E /* Info.plist */,
+			);
+			path = CCZCacheDemoTests;
+			sourceTree = "<group>";
+		};
 		43DA39211C7632C200613F8E = {
 			isa = PBXGroup;
 			children = (
 				43DA39481C7633D500613F8E /* CCZCache */,
 				43DA392C1C7632C200613F8E /* CCZCacheDemo */,
+				433B6D831CA03EC300A8400E /* CCZCacheDemoTests */,
 				43DA392B1C7632C200613F8E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				43DA392A1C7632C200613F8E /* CCZCacheDemo.app */,
+				433B6D821CA03EC300A8400E /* CCZCacheDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,6 +139,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		433B6D811CA03EC300A8400E /* CCZCacheDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 433B6D8B1CA03EC300A8400E /* Build configuration list for PBXNativeTarget "CCZCacheDemoTests" */;
+			buildPhases = (
+				433B6D7E1CA03EC300A8400E /* Sources */,
+				433B6D7F1CA03EC300A8400E /* Frameworks */,
+				433B6D801CA03EC300A8400E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				433B6D881CA03EC300A8400E /* PBXTargetDependency */,
+			);
+			name = CCZCacheDemoTests;
+			productName = CCZCacheDemoTests;
+			productReference = 433B6D821CA03EC300A8400E /* CCZCacheDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		43DA39291C7632C200613F8E /* CCZCacheDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43DA39411C7632C200613F8E /* Build configuration list for PBXNativeTarget "CCZCacheDemo" */;
@@ -133,6 +183,10 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = cuocuo;
 				TargetAttributes = {
+					433B6D811CA03EC300A8400E = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 43DA39291C7632C200613F8E;
+					};
 					43DA39291C7632C200613F8E = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
@@ -152,11 +206,19 @@
 			projectRoot = "";
 			targets = (
 				43DA39291C7632C200613F8E /* CCZCacheDemo */,
+				433B6D811CA03EC300A8400E /* CCZCacheDemoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		433B6D801CA03EC300A8400E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		43DA39281C7632C200613F8E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -170,6 +232,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		433B6D7E1CA03EC300A8400E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				433B6D851CA03EC300A8400E /* CCZCacheDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		43DA39261C7632C200613F8E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -184,6 +254,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		433B6D881CA03EC300A8400E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43DA39291C7632C200613F8E /* CCZCacheDemo */;
+			targetProxy = 433B6D871CA03EC300A8400E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		43DA39361C7632C200613F8E /* Main.storyboard */ = {
@@ -205,6 +283,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		433B6D891CA03EC300A8400E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CCZCacheDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cuocuo..CCZCacheDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCZCacheDemo.app/CCZCacheDemo";
+			};
+			name = Debug;
+		};
+		433B6D8A1CA03EC300A8400E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CCZCacheDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cuocuo..CCZCacheDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCZCacheDemo.app/CCZCacheDemo";
+			};
+			name = Release;
+		};
 		43DA393F1C7632C200613F8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -326,6 +430,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		433B6D8B1CA03EC300A8400E /* Build configuration list for PBXNativeTarget "CCZCacheDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				433B6D891CA03EC300A8400E /* Debug */,
+				433B6D8A1CA03EC300A8400E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		43DA39251C7632C200613F8E /* Build configuration list for PBXProject "CCZCacheDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

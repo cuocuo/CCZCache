@@ -7,16 +7,10 @@
 //
 
 #import "ViewController.h"
-#import <pthread.h>
-#import <QuartzCore/QuartzCore.h>
 #import "CCZCache.h"
 
-@interface ViewController ()<UIGestureRecognizerDelegate>
-{
-    NSLock *_testLock;
-    pthread_mutex_t _lock;
-    dispatch_semaphore_t _semaphoreLock;
-}
+@interface ViewController ()
+
 @end
 
 @implementation ViewController

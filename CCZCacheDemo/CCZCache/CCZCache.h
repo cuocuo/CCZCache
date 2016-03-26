@@ -7,5 +7,4 @@
 //  This source code is licensed under the MIT-style license.
 //
 
-#import <Foundation/Foundation.h>
 #import "CCZMemoryCache.h"

@@ -52,6 +52,8 @@
     [_nodes setObject:node forKey:node.key];
     if (_count == 0) {
         _first = _last = node;
+        _count ++;
+        _totalSize += node.size;
         return;
     }
     if (isFront) {

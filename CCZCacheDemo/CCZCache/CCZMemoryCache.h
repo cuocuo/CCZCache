@@ -24,16 +24,18 @@ typedef NS_ENUM(NSInteger,CCZMemoryCacheAlgorithmicType) {
 @interface CCZMemoryCache : NSObject{
     @protected
     dispatch_semaphore_t _semaphoreLock;
+    NSUInteger _maxCountLimit;
+    NSUInteger _maxSizeLimit;
 }
 
-//初始化方法，可选择缓存算法。
+//初始化方法，‘CCZMemoryCacheAlgorithmicType’可选择缓存算法。
 - (instancetype)initWithType:(CCZMemoryCacheAlgorithmicType)algorithmicType;
 + (instancetype)memoryCacheWithType:(CCZMemoryCacheAlgorithmicType)algorithmicType;
 
 //缓存最大数量，默认是100。
-@property (assign) NSUInteger maxCountLimit;
+@property (nonatomic, assign) NSUInteger maxCountLimit;
 //缓存最大容量，默认是20MB。缓存淘汰先以'maxSizeLimit'为基准进行淘汰。
-@property (assign) NSUInteger maxSizeLimit;
+@property (nonatomic, assign) NSUInteger maxSizeLimit;
 
 /*
  * 储存一个缓存对象。

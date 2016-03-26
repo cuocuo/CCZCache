@@ -318,13 +318,39 @@
     self = [super init];
     if (self) {
         _fifoQueue = [[CCZFIFOQueue alloc]init];
-        _fifoQueue.maxCountLimit = self.maxCountLimit;
-        _fifoQueue.maxSizeLimit = self.maxSizeLimit;
         _lruQueue = [[CCZLRUQueue alloc]init];
-        _lruQueue.maxCountLimit = self.maxCountLimit;
-        _lruQueue.maxSizeLimit = self.maxSizeLimit;
     }
     return self;
+}
+
+- (void)setMaxCountLimit:(NSUInteger)maxCountLimit {
+    dispatch_semaphore_wait(_semaphoreLock, DISPATCH_TIME_FOREVER);
+    _maxCountLimit = maxCountLimit;
+    _fifoQueue.maxCountLimit = _maxCountLimit;
+    _lruQueue.maxCountLimit = _maxCountLimit;
+    dispatch_semaphore_signal(_semaphoreLock);
+}
+
+- (NSUInteger)maxCountLimit{
+    dispatch_semaphore_wait(_semaphoreLock, DISPATCH_TIME_FOREVER);
+    NSUInteger count = _maxCountLimit;
+    dispatch_semaphore_signal(_semaphoreLock);
+    return count;
+}
+
+- (void)setMaxSizeLimit:(NSUInteger)maxSizeLimit {
+    dispatch_semaphore_wait(_semaphoreLock, DISPATCH_TIME_FOREVER);
+    _maxSizeLimit = maxSizeLimit;
+    _lruQueue.maxSizeLimit = _maxSizeLimit;
+    _fifoQueue.maxSizeLimit = _maxSizeLimit;
+    dispatch_semaphore_signal(_semaphoreLock);
+}
+
+- (NSUInteger)maxSizeLimit{
+    dispatch_semaphore_wait(_semaphoreLock, DISPATCH_TIME_FOREVER);
+    NSUInteger size = _maxSizeLimit;
+    dispatch_semaphore_signal(_semaphoreLock);
+    return size;
 }
 
 - (void)storeObject:(id)object forKey:(id<NSCopying>)key {
@@ -397,13 +423,39 @@
     self = [super init];
     if (self) {
         _fifoQueue = [[CCZFIFOQueue alloc]init];
-        _fifoQueue.maxCountLimit = self.maxCountLimit/2;
-        _fifoQueue.maxSizeLimit = self.maxSizeLimit/2;
         _lruQueue = [[CCZLRUQueue alloc]init];
-        _lruQueue.maxCountLimit = self.maxCountLimit - self.maxCountLimit/2;
-        _lruQueue.maxSizeLimit = self.maxSizeLimit - self.maxSizeLimit/2;
     }
     return self;
+}
+
+- (void)setMaxCountLimit:(NSUInteger)maxCountLimit {
+    dispatch_semaphore_wait(_semaphoreLock, DISPATCH_TIME_FOREVER);
+    _maxCountLimit = maxCountLimit;
+    _fifoQueue.maxCountLimit = _maxCountLimit/2;
+    _lruQueue.maxCountLimit = _maxCountLimit - _maxCountLimit/2;
+    dispatch_semaphore_signal(_semaphoreLock);
+}
+
+- (NSUInteger)maxCountLimit{
+    dispatch_semaphore_wait(_semaphoreLock, DISPATCH_TIME_FOREVER);
+    NSUInteger count = _maxCountLimit;
+    dispatch_semaphore_signal(_semaphoreLock);
+    return count;
+}
+
+- (void)setMaxSizeLimit:(NSUInteger)maxSizeLimit {
+    dispatch_semaphore_wait(_semaphoreLock, DISPATCH_TIME_FOREVER);
+    _maxSizeLimit = maxSizeLimit;
+    _lruQueue.maxSizeLimit = _maxSizeLimit - _maxSizeLimit/2;
+    _fifoQueue.maxSizeLimit = _maxSizeLimit/2;
+    dispatch_semaphore_signal(_semaphoreLock);
+}
+
+- (NSUInteger)maxSizeLimit{
+    dispatch_semaphore_wait(_semaphoreLock, DISPATCH_TIME_FOREVER);
+    NSUInteger size = _maxSizeLimit;
+    dispatch_semaphore_signal(_semaphoreLock);
+    return size;
 }
 
 - (void)storeObject:(id)object forKey:(id<NSCopying>)key {
@@ -473,10 +525,36 @@
     self = [super init];
     if (self) {
         _lfuQueue = [[CCZLFUQueue alloc]init];
-        _lfuQueue.maxCountLimit = self.maxCountLimit;
-        _lfuQueue.maxSizeLimit = self.maxSizeLimit;
     }
     return self;
+}
+
+- (void)setMaxCountLimit:(NSUInteger)maxCountLimit {
+    dispatch_semaphore_wait(_semaphoreLock, DISPATCH_TIME_FOREVER);
+    _maxCountLimit = maxCountLimit;
+    _lfuQueue.maxCountLimit = maxCountLimit;
+    dispatch_semaphore_signal(_semaphoreLock);
+}
+
+- (NSUInteger)maxCountLimit{
+    dispatch_semaphore_wait(_semaphoreLock, DISPATCH_TIME_FOREVER);
+    NSUInteger count = _maxCountLimit;
+    dispatch_semaphore_signal(_semaphoreLock);
+    return count;
+}
+
+- (void)setMaxSizeLimit:(NSUInteger)maxSizeLimit {
+    dispatch_semaphore_wait(_semaphoreLock, DISPATCH_TIME_FOREVER);
+    _maxSizeLimit = maxSizeLimit;
+    _lfuQueue.maxSizeLimit = maxSizeLimit;
+    dispatch_semaphore_signal(_semaphoreLock);
+}
+
+- (NSUInteger)maxSizeLimit{
+    dispatch_semaphore_wait(_semaphoreLock, DISPATCH_TIME_FOREVER);
+    NSUInteger size = _maxSizeLimit;
+    dispatch_semaphore_signal(_semaphoreLock);
+    return size;
 }
 
 - (void)storeObject:(id)object forKey:(id<NSCopying>)key {
@@ -553,6 +631,20 @@
     return [[CCZMemoryCache alloc] initWithType:algorithmicType];
 }
 
+- (void)setMaxCountLimit:(NSUInteger)maxCountLimit {
+    dispatch_semaphore_wait(_semaphoreLock, DISPATCH_TIME_FOREVER);
+    _maxCountLimit = maxCountLimit;
+    _lruQueue.maxCountLimit = maxCountLimit;
+    dispatch_semaphore_signal(_semaphoreLock);
+}
+
+- (NSUInteger)maxCountLimit{
+    dispatch_semaphore_wait(_semaphoreLock, DISPATCH_TIME_FOREVER);
+    NSUInteger count = _maxCountLimit;
+    dispatch_semaphore_signal(_semaphoreLock);
+    return count;
+}
+
 - (void)storeObject:(id)object forKey:(id<NSCopying>)key {
     [self storeObject:object forKey:key size:0];
 }
@@ -569,7 +661,7 @@
     CCZLinedHashMapNode *node = [_lruQueue ccz_NodeForKey:key];
     dispatch_semaphore_signal(_semaphoreLock);
     return node.value;
-   
+    
 }
 
 - (void)removeObjectForKey:(id)key {
@@ -589,3 +681,4 @@
 }
 
 @end
+

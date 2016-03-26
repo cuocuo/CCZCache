@@ -9,8 +9,19 @@
 
 #import "CCZDiskCache.h"
 
-@implementation CCZDiskCache
-
-
+@interface CCZDiskCache ()
 
 @end
+
+@implementation CCZDiskCache
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+
+@end
+

@@ -11,4 +11,5 @@
 
 @interface CCZDiskCache : NSObject
 
+
 @end
